@@ -1,7 +1,11 @@
 <component name="ProjectDictionaryState">
   <dictionary name="admin">
     <words>
+      <w>endblock</w>
+      <w>endfor</w>
       <w>navbar</w>
+      <w>tasklist</w>
+      <w>thead</w>
       <w>todolist</w>
     </words>
   </dictionary>
