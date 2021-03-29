@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todolist_app',
     'users_app',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+CRISPY_TEMPlATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = "todolist" # for to going the page todolist
