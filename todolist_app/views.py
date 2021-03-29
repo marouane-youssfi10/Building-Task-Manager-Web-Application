@@ -28,7 +28,10 @@ def todolist(request):
 @login_required
 def delete_task(request, task_id):
     task = Tasklist.objects.get(pk=task_id)
-    task.delete()
+    if task.manage == request.user:
+        task.delete()
+    else:
+        messages.error(request, "Access Restricted, You Are Not Allowed.")
     return redirect('todolist')
 
 @login_required
@@ -49,11 +52,11 @@ def edit_task(request, task_id):
 @login_required
 def complate_task(request, task_id):
     task = Tasklist.objects.get(pk=task_id)
-    # print('task = ', task)
-    # print('---------------------------------')
-    # print('task.done = ', task)
-    task.done = True
-    task.save()
+    if task.manage == request.user:
+        task.done = True
+        task.save()
+    else:
+        messages.error(request, "Access Restricted, You Are Not Allowed.")
     return redirect('todolist')
 
 @login_required

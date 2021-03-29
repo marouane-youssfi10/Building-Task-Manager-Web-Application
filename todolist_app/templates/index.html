@@ -12,21 +12,25 @@
             <img src="{% static 'images/diana.jpg' %}" class="rounded-lg shadow" alt="Notes" width="350px" height="350px">
         </div>
         <div class="col-lg-4">
-            <img src="{% static 'images/diana.jpg' %}" class="rounded-lg shadow" alt="" width="350px" height="350px">
+            <img src="{% static 'images/kelly.jpg' %}" class="rounded-lg shadow" alt="" width="350px" height="350px">
         </div>
         <div class="col-lg-4">
-            <img src="{% static 'images/diana.jpg' %}" class="rounded-lg shadow" alt="" width="350px" height="350px">
+            <img src="{% static 'images/j-kelly.jpg' %}" class="rounded-lg shadow" alt="" width="350px" height="350px">
         </div>
       </div>
 
       <div class="row mt-5">
           <div class="col-md-10 offset-md-1">
-            <center><p class="h1 text-primary">Quick And Easy To use, Anytime, Anywhere!</p></center>
-            <center><p class="h2 mt-3">Plan Your Day Better, Get Your Life Organized</p></center>
-            <center><p class="h5">Taskmate lets you keep Track Of Your Task In One Place</p></center>
-
-            <center><a href="{% url 'todolist' %}"><button type="button" class="btn btn-primary btn-lg mt-3 shadow">Let's Get Started</button></a></center>
+              <center>
+                   <p class="h1 text-primary">Quick And Easy To use, Anytime, Anywhere!</p>
+                   <p class="h2 mt-3">Plan Your Day Better, Get Your Life Organized</p>
+                   <p class="h5">Taskmate lets you keep Track Of Your Task In One Place</p>
+                   <a href="{% url 'todolist' %}">
+                       <button type="button" class="btn btn-primary btn-lg mt-3 shadow">Let's Get Started</button>
+                   </a>
+              </center>
           </div>
       </div>
   </div>
+  <br>
 {% endblock content %}
