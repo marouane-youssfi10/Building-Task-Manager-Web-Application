@@ -4,28 +4,34 @@ from .models import Tasklist
 from .forms import TaskForm
 from django.contrib import messages
 from django.core.paginator import Paginator
-# Create your views here.
+from django.contrib.auth.decorators import login_required
 
+
+@login_required # bach ta ila d5lti lpage todolist ou makntich loggin maraybrich id5lk
 def todolist(request):
 
     if request.method == "POST":
         form = TaskForm(request.POST or None)
         if form.is_valid():
+            instance = form.save(commit=False)
+            instance.manage = request.user # had ine bach t3rf user li zad task
             form.save()
         messages.success(request, 'New Task Added!')
         return redirect('todolist')
     else:
-        all_tasks = Tasklist.objects.all()
+        all_tasks = Tasklist.objects.filter(manage=request.user) # had line bach t5li l user ichof hi dakchi dyalo ou sf
         paginator = Paginator(all_tasks, 5)
         page = request.GET.get('pg')
         all_tasks = paginator.get_page(page)
         return render(request, 'todolist.html', {'all_tasks': all_tasks})
 
+@login_required
 def delete_task(request, task_id):
     task = Tasklist.objects.get(pk=task_id)
     task.delete()
     return redirect('todolist')
 
+@login_required
 def edit_task(request, task_id):
 
     if request.method == "POST":
@@ -40,6 +46,7 @@ def edit_task(request, task_id):
 
         return render(request, 'edit.html', {'task_obj': task_obj})
 
+@login_required
 def complate_task(request, task_id):
     task = Tasklist.objects.get(pk=task_id)
     # print('task = ', task)
@@ -49,6 +56,7 @@ def complate_task(request, task_id):
     task.save()
     return redirect('todolist')
 
+@login_required
 def pending_task(request, task_id):
     task = Tasklist.objects.get(pk=task_id)
     task.done = False
@@ -61,6 +69,7 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
+@login_required
 def contact(request):
     context = {
         'contact_text': 'welcome contact page.'

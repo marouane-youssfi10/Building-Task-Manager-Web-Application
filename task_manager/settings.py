@@ -126,3 +126,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 CRISPY_TEMPlATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = "todolist" # for to going the page todolist
+LOGIN_URL = "login" # bach imchi l page login ila makntich ligin f site fach tbrk 3la todolist
