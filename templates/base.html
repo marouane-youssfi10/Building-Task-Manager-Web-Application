@@ -31,9 +31,9 @@
 
           {% if user.is_authenticated %}
               <div class="p-2 bg-dark text-white"> Logged in as {{ user.username }} </div>
-              <a href="{% url 'logout' %}" class="col-1"><button class="btn btn-info btn-sm" type="submit">Logout</button></a>
+              <a href="{% url 'logout' %}" class="col-1"><button class="btn btn-info my-2 my-sm-0" type="submit">Logout</button></a>
           {% else %}
-          <div class="form-inline">
+          <div class="form-inline col-2">
               <a href="{% url 'login' %}"><button class="btn btn-success my-2 my-sm-0" type="submit">Login</button></a>
               <a href="{% url 'register' %}"><button class="btn btn-primary my-2 my-sm-0" type="submit">Register</button></a>
           </div>

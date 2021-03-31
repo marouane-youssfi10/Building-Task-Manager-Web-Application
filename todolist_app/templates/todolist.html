@@ -20,12 +20,15 @@
       <form method="POST" class="form-inline">
           {% csrf_token %}
           <label class="col-lg-4"></label>
-          <input type="text" class="form-control col-lg-2" placeholder="New Task?" name="task">
-          <button type="submit" class="btn btn-primary col-lg-2">Add Task</button>
+          <div class="col-sm-5">
+            <input type="text" class="form-control col-1" placeholder="New Task?" name="task">
+              <br>
+            <button type="submit" class="btn btn-primary col-2">Add Task</button>
+          </div>
       </form>
       <br>
-      <table class="table table-bordered text-center">
-          <thead class="thead-dark">
+      <table class="table table-bordered text-center table-hover">
+          <thead>
               <tr class="row">
                   <th class="col-7">Task</th>
                   <th class="col-3">Done</th>
