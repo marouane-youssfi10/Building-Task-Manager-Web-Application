@@ -1,5 +1,6 @@
 import os
 import environ
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -120,3 +121,5 @@ CRISPY_TEMPlATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = "todolist" # for to going the page todolist
 LOGIN_URL = "login" # bach imchi l page login ila makntich ligin f site fach tbrk 3la todolist
+
+django_heroku.settings(locals())
