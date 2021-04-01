@@ -114,6 +114,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticFiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
@@ -123,3 +124,4 @@ LOGIN_REDIRECT_URL = "todolist" # for to going the page todolist
 LOGIN_URL = "login" # bach imchi l page login ila makntich ligin f site fach tbrk 3la todolist
 
 django_heroku.settings(locals())
+

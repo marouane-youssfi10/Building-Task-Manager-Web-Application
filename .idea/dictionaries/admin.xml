@@ -7,6 +7,7 @@
       <w>dyalo</w>
       <w>endblock</w>
       <w>endfor</w>
+      <w>gunicorn</w>
       <w>ichof</w>
       <w>loggin</w>
       <w>lpage</w>
